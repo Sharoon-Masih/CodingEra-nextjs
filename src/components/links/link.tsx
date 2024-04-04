@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Navlinks from "../Navlinks/navlink";
 const pagesLinks: ({ title: string, path: string })[] = [   //now basically yeh "link" component iss lia bnaya hai taka dynamically navbar ma value dey sakay for suppose agr na bnatay toh phr humara navBar ki file ma jaka statically sb likhna parta now its simple kay ek array bnaya usma sb hi pages ka link or title rakhdia or usko iterate krdia.
     {
         title: "Home",
@@ -33,7 +34,7 @@ const LinkPage = () => {
     return (
         <>      {/*remember its not neccessary to use key prop while mapping but its good practice to include key prop. */}
             <ul className=' hidden sm:flex sm:space-x-6 sm:items-center '>
-                {/* <NavLinks paths={pagesLinks}/> ask sir for this error */}
+                {/* <Navlinks paths={pagesLinks}/> ask sir for this error */}
                 {pagesLinks.map((page) => <li className={(page.path === pathName) ? "font-bold text-lg" : "hover:font-semibold font-medium text-black text-lg "}><Link href={page.path} key={page.title}>{page.title}</Link></li>)} {/*yaha simply humna "map" ka through array ko iterate kia hai or then as a "li" item bnakay then usma "Link" component use krka easily sab item ko iterate krdia.and className ma jo condition lgyi hai woh iss lia lgyi haka jo be route active ho wo bold hojayeg. */}
                 {session ? <li className=" bg-black py-2 px-3 rounded-lg font-medium text-white text-sm border-2" ><Link href={"./signup"}>Signup</Link></li> : isLogin ? <li className="bg-black py-2 px-3 rounded-lg font-medium text-white text-sm border-2" ><Link href={"./login"}>Login</Link></li> : <button className="bg-black py-2 px-3 rounded-lg font-medium text-white text-sm border-2">Logout</button>}
             </ul>

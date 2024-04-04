@@ -3,6 +3,16 @@ import CardApi from "@/components/cardApi/cards";
 import Notfound from '@/app/not-found';
 import Image from 'next/image';
 
+
+
+export function generateStaticParams(){
+  
+    
+  return CardApi.map((blog)=>(   //remember jo arrow func hai wo by default khud sa implicitly return krta hai agar hum {} curly braces nahi lgyega or agr curly braces lgye ga toh phr humna explicitly return likhna hoga.
+     {dynamicblog:blog.title}
+  )) 
+
+}
 interface Iprops {
   params: { dynamicBlog: string } //remember params srf dynamic route may get hotay hain and jo params object ki property hogi wo wohi hogi name humna dynamic route ka rakha hoga. 
 }

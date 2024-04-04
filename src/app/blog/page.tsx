@@ -18,8 +18,8 @@ const Blog = async () => {
     // console.log(getData);
     
   return (
-    <div className="blog-container  flex w-9/12 m-auto py-2 justify-center  items-center ">
-      <div className="blog-grid  grid grid-cols-1 md:grid-cols-2 md:gap-x-16 md:gap-y-4 justify-center items-center gap-y-3 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="blog-container  flex w-9/12 m-auto py-2 justify-center items-center ">
+      <div className="blog-grid  grid grid-cols-1 md:grid-cols-2 md:gap-x-16 md:gap-y-4  items-center gap-y-3 lg:grid-cols-3 xl:grid-cols-4">
         {CardApi.map((card) =>{
            const {title,desc,date,src}=card
           return( 
